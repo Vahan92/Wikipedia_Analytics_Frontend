@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/src/index.css" />
+  <title>Analytics Metrics</title>
+</head>
+
+<body class="p-6 bg-white text-gray-900">
+  <nav class="mb-6 text-center">
+    <a href="/" class="ml-4 text-blue-600">Home</a>
+    <a href="/analytics.html" class="ml-4 text-blue-600 font-bold">Analytics</a>
+  </nav>
+  <h1 id="page-title" class="text-2xl font-semibold mb-6">Analytics</h1>
+  <div class="flex space-x-4 mb-4">
+    <select id="metric-type" class="border px-2 py-1">
+      <option value="plausible">Plausible</option>
+      <option value="matomo">Matomo</option>
+    </select>
+    <select id="metric-period" class="border px-2 py-1">
+      <option value="30d">Last 30 days</option>
+      <option value="90d">Last 90 days</option>
+      <option value="365d">Last 365 days</option>
+    </select>
+    <button id="load-btn" class="bg-blue-600 text-white px-4 py-1 rounded">Load</button>
+  </div>
+  <canvas id="metricsChart" class="w-full max-w-3xl"></canvas>
+  <script type="module" src="/src/ui.js"></script>
+</body>
+
+</html>
