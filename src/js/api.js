@@ -1,6 +1,9 @@
 
 import { getWithTTL, setWithTTL } from '../utils/cache.js';
 
+console.log('import.meta.env.VITE_API_BASE_URL ..... ', import.meta.env.VITE_API_BASE_URL);
+
+
 const API_ROOT = import.meta.env.VITE_API_BASE_URL + '/api';
 const CACHE_TTL = 1000 * 60 * 60;  // 1 hour in ms :contentReference[oaicite:5]{index=5}
 

@@ -6,7 +6,13 @@ export default defineConfig({
   publicDir: 'public',
   build: {
     outDir: 'dist',
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        analytics: 'analytics.html'
+      }
+    }
   },
   plugins: [
     tailwindcss(),
