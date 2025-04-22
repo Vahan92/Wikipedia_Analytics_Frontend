@@ -3,8 +3,10 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="/src/index.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Wiki Analytics</title>
+  <link rel="stylesheet" href="/src/index.css" />
+
   <script defer data-domain="wikipedia-analytics-frontend.onrender.com"
     src="https://plausible.io/js/script.js"></script>
   <script>
@@ -15,18 +17,42 @@
       var u = "https://wikipedia-analytic-vahan.matomo.cloud/";
       _paq.push(['setTrackerUrl', u + 'matomo.php']);
       _paq.push(['setSiteId', '1']);
-      var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-      g.async = true; g.src = 'https://cdn.matomo.cloud/wikipedia-analytic-vahan.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g, s);
+      var d = document, g = d.createElement('script'),
+        s = d.getElementsByTagName('script')[0];
+      g.async = true;
+      g.src = 'https://cdn.matomo.cloud/wikipedia-analytic-vahan.matomo.cloud/matomo.js';
+      s.parentNode.insertBefore(g, s);
     })();
   </script>
 </head>
 
 <body class="bg-gray-50 text-gray-800 p-6">
   <nav class="mb-6 text-center">
-    <a href="/" class="ml-4 text-blue-600 font-bold">Home</a>
-    <a href="/analytics.html" class="ml-4 text-blue-600">Analytics</a>
+    <a href="#/" class="ml-4 text-blue-600 font-bold">Home</a>
+    <a href="#/analytics" class="ml-4 text-blue-600">Analytics</a>
   </nav>
-  <div id="app" class="space-y-4 max-w-[1440px] mx-auto"></div>
+
+  <div id="home" class="space-y-4 max-w-[1440px] mx-auto">
+    <div id="app"></div>
+  </div>
+
+  <div id="analytics" class="hidden flex flex-col space-y-4 mb-4 max-w-[1440px] mx-auto">
+    <div class="w-full">
+      <h2 class="text-xl font-semibold mb-2">Plausible Analytics</h2>
+      <iframe class="w-full h-[800px] border-0"
+        src="https://plausible.io/share/wikipedia-analytics-frontend.onrender.com?auth=S_-yoMgY2N5B_dLZ-lBpt"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="w-full">
+      <h2 class="text-xl font-semibold mb-2">Matomo Dashboard</h2>
+      <iframe class="w-full h-[800px] border-0"
+        src="https://wikipedia-analytic-vahan.matomo.cloud/index.php?module=Widgetize&amp;action=iframe&amp;moduleToWidgetize=Dashboard&amp;actionToWidgetize=index&amp;idSite=1&amp;period=range&amp;date=last30&amp;disableLink=1&amp;forceView=1"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
   <script type="module" src="/src/js/main.js"></script>
 </body>
 
